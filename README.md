@@ -1,21 +1,34 @@
-# sudoku-java
+# Sudoku Java (DIO Challenge)
 
-Jogo de Sudoku em Java com arquitetura separada entre entrada, regras de dominio e orquestracao do jogo.
+Projeto de Sudoku em Java desenvolvido como parte de um desafio prático da [DIO (Digital Innovation One)](https://www.dio.me/).
 
-## Estrutura
+## Visão geral
 
-- `src/Main.java`: ponto de entrada da aplicacao.
-- `src/Sudoku.java`: fachada que inicializa o jogo.
-- `src/domain/Difficulty.java`: enum com tabuleiros base por dificuldade.
-- `src/domain/SudokuBoard.java`: estado do tabuleiro e regras de validacao.
-- `src/domain/SudokuGame.java`: loop da partida.
-- `src/domain/InputReader.java`: leitura segura de entrada no terminal.
-- `src/domain/Position.java` e `src/domain/Move.java`: modelos imutaveis com `record`.
+Aplicação de terminal (CLI) para jogar Sudoku, com:
+- seleção de dificuldade
+- validação de jogadas (linha, coluna e quadrante)
+- proteção de posições fixas do tabuleiro
+- marcação de jogadas incertas
+- opção de apagar jogadas do usuário
+- validação de solução final (`isSolved`)
 
-## Rodar
+## Stack
 
-```bash
-cd /Users/rogertoledo/me/cursos/dio/sudoku-java/src
-javac Main.java Sudoku.java domain/*.java
-java Main
-```
+- **Java 25**
+- Paradigma orientado a objetos
+- Uso de recursos modernos da linguagem (`record`, `enum`, `var`, streams)
+
+## Estrutura do projeto
+
+```text
+src/
+  Main.java
+  Sudoku.java
+  domain/
+    Difficulty.java
+    InputReader.java
+    Move.java
+    MoveResult.java
+    Position.java
+    SudokuBoard.java
+    SudokuGame.java
